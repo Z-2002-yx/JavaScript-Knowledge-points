@@ -1,0 +1,85 @@
+什么是DOM
+访问JavaScript HTML文档中的所有元素
+
+
+----------------------
+文档获取方式
+DOM的文档对象 顶层对象：document对象
+
+··getElementById()  		通过ID来获取
+··getElementsByClassName()  	通过class获取
+··getElementsByTagName()  	通过标签获取
+··getElementsByName()  	通过name属性获取
+··querySelector()  		通过一个属性来获取一个值
+··querySelectorAll() 		通过一个属性获取全部值
+
+---clientWidth    获取节点宽度
+---clientHeight  获取节点高度
+
+---------------------
+设置元素内容
+··innerHTML()    	给标签添加内容
+··innerText()       	给标签添加内容（不知别HTML标签）
+··value() 		给input添加value内容
+
+
+
+-----------
+属性节点分类
+
+1、元素节点
+2、文本节点
+3、属性节点
+
+通用的属性
+1、nodeName 查看节点名称（元素节点返回标签名，文本节点返回#text）
+2、nodeType 查看节点类型（元素节点返回1，属性节点返回2，文本节点返回3）
+3、nodeValue 查看节点的值（元素节点返回null，文本节点返回文本值）
+
+节点之间的关系
+
+1、兄弟关系
+nextSibling 		获取下一个兄弟节点（元素节点，标签节点，属性节点）
+nextElementSibling 	获取下一个兄弟元素节点
+
+previousSibling 		获取上一个兄弟节点
+previousElementSibling 	获取上一个兄弟元素节点
+
+
+2、父子关系
+childNodes 		获取所有类型的子节点
+children			获取所有子元素节点
+
+lastChild			获取最后一个子节点
+lastElementChild		获取最后一个子元素节点
+
+firstChild			获取第一个子节点
+firstElementChile   		获取第一个子元素节点
+
+parentNode		获取父节点
+parentElement		获取父元素节点
+
+节点管理
+1、增加节点
+appendChild( ' 标签名 ' ) 		在父元素结尾插入元素节点
+insertBefore( '标签名' )		在父元素开头插入元素节点
+2、修改删除节点W
+replaceChild(new,old)		修改指定子节点
+removeChild(子节点)		删除指定子节点
+remove()				删除当前节点
+
+自定义属性操作方法
+    1.node.getAttribute()：读取节点的属性值
+
+    2.node.setAttribute（）：设置节点属性值
+
+    3.node.removeAttribute（）：删除节点的属性
+
+    4.node.hasAttribute（）：检测节点是否存在某属性
+
+	
+节点操作网址
+https://www.jianshu.com/p/92d6c88cb768
+
+
+-----------------------

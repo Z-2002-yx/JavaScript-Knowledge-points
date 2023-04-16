@@ -1,0 +1,22 @@
+BOM
+Browser Object Model 浏览器对象模型
+
+BOM组成部分：window对象，location重定向、navigator导航对象、screen屏幕信息、history历史记录
+
+
+window对象：
+  BOM中的核心对象，浏览器窗口的对象信息，页面js的全局变量对象都是window的属性和方法
+
+  打开新的页面
+  var aa = window.open(网址,'target','width=100,height=100');
+
+
+location对象：
+  href  跳转页面
+
+navigator导航对象：
+  获取浏览器的属性
+
+  
+  
+  

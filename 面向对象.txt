@@ -1,0 +1,99 @@
+程序分为 面向对象编程和 面向过程编程
+
+面向对象又称OOP     将事物封装成一个对象，让对象协同合作
+
+特性：
+    封装性：将内部封装隐藏，不让外部发现
+    继承性：减少代码冗余
+    多态  ：不同的对象有不同的结果
+
+
+
+对象：是键值对的无序组合
+
+创建对象：
+    1、通过字面量创建对象
+        var obj = {}
+        使用场景：对象内部属性确定的情况下
+        
+        缺点：需要重复定义对象，产生大量代码
+
+
+    2、通过new Object 构造函数创建对象
+        var obj = new Object();
+        使用场景：对象属性不确定的情况下
+
+        var obj = new Object();
+        obj.*** = ***;
+    
+    3、工厂模式
+        function Person(username, aeg) {
+            var obj = {};
+            obj.username = username;
+            obj.age = aeg;
+        }
+        使用场景：生成属性相同的对象
+
+        缺点：每次返回的类型只能是对象的类型
+    
+    4、构造函数
+        function Person(username, age) {
+            this.username = username;
+            this.age = age;
+        }
+        var p1 = new Person('张三',30);
+        使用场景：对象中的多个属性相同
+
+        缺点：实例化的实例会产生大量的代码，造成内存占用
+    5、
+        构造函数+原型
+        function Person(username, age) {
+            this.username = username;
+            this.age = age;
+        }
+        Person.prototype.getAge = function () {
+            return this.age;
+        }
+        var p1 = new Person('张三', 30);
+        var p2 = new Person('李四', 40);
+        console.log(p2);
+        console.log(p2.getAge());
+
+        console.log(p1);
+    
+    对象检测：
+        实例对象 instanceof 对象 
+        返回布尔值
+    
+    属性的检测：
+        in运算符：判断属性是否为自身或继承来的
+        hasOwnProperty()：只会判断自身属性
+    
+    访问器属性：
+        setter      设置属性
+        getter      访问属性
+
+    new操作符作用：
+        1、实例化一个空对象，this指向这个对象，可以继承父类的方法
+        2、将对象中的属性指向实例化对象
+        3、新创建的对象可以被this引用，并隐式的返回this
+
+    对象中的方法
+        defineProperty(变量,属性名,{value：值})        设定修改对象中的值
+        数据属性
+            value：值
+            writable：false  //设置不能修改
+            enumerable：false //是否可迭代
+            configurable：false //设置不可使用delete运算符删除
+        
+        create({})        创建对象
+
+        assign(obj,obj2)        将obj属性从一个或多个对象移动obj2对象中
+
+        is(value1,value2)        判断两个是否相等
+
+        getPrototypeOf(obj)     判断函数属于哪个构造函数
+
+        
+
+        

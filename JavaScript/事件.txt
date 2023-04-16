@@ -1,0 +1,44 @@
+事件定义：
+用户和浏览器之间交互的一瞬间就形成了事件
+
+事件绑定方式：
+1、js	DOM0级绑定法（只能绑定一个事件）
+     获取一个节点
+     节点. onclick = function(){}
+2、html绑定法  （只能绑定一个事件）
+     <button onclick = ' 函数名 '></button>
+3、DOM2级绑定法  （可以绑定多个事件）
+     元素节点. addEventListener( '事件名' , 函数或匿名函数（函数不需要加括号）,bool值 )
+   三者区别：html代码耦合性比较高，DOM0无法给一个元素绑定多个事件，DOM2可以给一个元素绑定多个事件
+
+事件类型：
+1、鼠标事件
+click  		鼠标单击
+dblclick  		鼠标双击
+mousemove  	鼠标移动
+mousedown  	鼠标按下
+mouseup   	鼠标抬起
+mouseenter  	鼠标移入
+mouseout  	鼠标离开
+mouseleave  	鼠标离开  事件冒泡
+mouseover	鼠标经过
+
+2、表单事件
+submit  		表单提交
+reset  		表单重置
+focus		获取焦点
+blur		失去焦点
+change  		内容改变后，并且失去焦点后触发
+input 		内容发生改变时触发
+
+3、键盘事件
+keyup  		键盘抬起
+keydown		键盘按下
+keypress		键盘按下（只有字符键触发）、
+event.keyCode	获取键盘码
+
+4、UI页面事件
+load 		页面加载的时候
+unload 		页面关闭
+scroll		页面滚动
+resize		改变页面大小A

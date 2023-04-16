@@ -1,0 +1,20 @@
+本地存储
+H5新增的新特性
+
+本地存储区别
+localStorage    	浏览器关闭后，数据还存在
+sessionStorage 	浏览器关闭后，数据丢失
+
+
+使用本地存储
+localStorage.setItem 	添加信息
+localStorage.getItem	获取信息
+localStorage.removeItem	删除信息
+localStorage.clear()		清空信息
+
+清空信息之后用一个方法重新加载页面
+location.reload();
+
+JSON.stringify(json对象)   转json字符串，存
+JSON.parse(json字符串)  转json对象，取
+

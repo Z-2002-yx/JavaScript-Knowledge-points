@@ -1,0 +1,14 @@
+
+一次性定时器
+ setTimeout( 函数，时间 )
+ 设置一次性的定时器
+
+ clearTimeout(变量)
+ 清除定时器的效果
+
+间接性定时器
+ setInterval(函数，间隔时间)
+ 设置间接性定时器
+ 
+ clearInterval(变量)
+ 清空间接性定时器

@@ -1,0 +1,31 @@
+promise是异步工具，Ajax为异步请求
+
+三种状态：
+    1、pending：未完成
+    2、fulfilled：已完成
+    3、rejected：已拒绝
+
+    状态不可逆
+
+创建方式：
+    new Promise((resolve,reject)=>{})
+
+    resolve:可以将pending未完成状态改为fulfilled已完成状态
+    reject:可以将pending未完成状态改为rejected已拒绝状态
+
+作用：
+    主要为了解决Ajax的回调地狱
+方法：    
+    then()
+    此方提供了onFulfilled和onRejected两个方法
+    catch()
+    拒绝使用的方法
+    
+
+
+async function show() {
+        return await $.get('http://127.0.0.1:8000/app/index/', function (result) {
+            result;
+        })
+    }
+异步变同步

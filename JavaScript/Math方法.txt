@@ -1,0 +1,30 @@
+Math.abs(value)
+求绝对值
+
+Math.pow(value,次方)
+求n次幂
+
+Math.sqrt(value);
+开方
+
+Math.floor(value)
+向下取整
+
+
+Math.ceil(value)
+向上取整
+
+Math.round()
+四舍五入
+
+Math.max(...Array)
+最大值
+
+Math.min(...Array)
+最小值
+
+Math.random() 
+生成 [0,1) 之间的随机小数
+
+parseInt( Math.random() * (N-M) + M )
+生成【M-N】之间随机整数

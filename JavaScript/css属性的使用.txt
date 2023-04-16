@@ -1,0 +1,94 @@
+
+设置超出不换行
+white-space：nowrap；
+
+----------------------
+文字超出设置为···· 
+text-overflow：ellipsis；
+
+
+------------------------------
+当一个类选择器中有多个相同的类选择器时可以使用   :nth-child(  number  )伪类属性单独设置样式
+
+
+-------------------------------
+隐藏盒子
+display：none；
+-------------------------
+
+颜色渐变
+background-image：linear-gradient( 参数《默认从上到下》，颜色， 颜色) -- 参数：to right 从左到右、to bottom right 对角线
+------------------------------
+高度崩塌解决方法
+
+1、加一个div元素
+2、父级设置overflow属性
+3、父级设置   ::after 伪属性 
+
+
+---------------------------
+为什么要清除浮动
+1、父级没有高度
+2、子盒子浮动了
+3、影像下面布局
+
+
+---------------------------
+定位   position  
+
+******"‘父’相‘子’绝"：‘父’表示父级盒子，‘子’表示子级盒子，将父级盒子设置为相对定位，子级盒子设置为绝对定位。
+
+--绝对定位>  position:absolute;   默认以浏览器作为参照，将父级盒子设置为相对定位时子盒子的参照变为父级盒子
+
+--相对定位>  position:relative;  相对于父级定位
+
+--固定定位>  position:fixed;  相对于浏览器定位
+
+
+----------------------
+
+弹性盒子       http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+
+--弹性盒子属性--
+
+-flex-direction  **  row  column 控制弹性盒子主轴方向
+
+-flex-wrap   wrap、nowrap  控制超出父盒子的宽度换行
+
+-flex-flow   结合了direction和wrap
+
+-justfy-content  **   center、space-bettwen、space-around   指定弹性盒子的主轴对齐方式
+
+-align-items   **  交叉轴对齐方式
+
+-align-content
+
+
+
+子元素的属性
+
+-order
+
+-flex-grow
+
+-flex-shrink
+
+-flex-basis
+
+-flex
+
+-align-self
+
+-----------------------------------
+2D转换属性
+
+属性名  transform
+
+方法1：translate(x,y) 当前元素以X或者Y轴移动位置
+方法2：rotate(数值加deg)  当前元素顺时针旋转，数值为负数时逆时针旋转
+方法3：scale(x,y) 以X或Y轴改变元素大小 ， xy为数字类型不要加 ** px **
+方法4：skew(数值加deg , 数值加deg) 倾斜角度
+
+-------------------------
+动画
+--------------------------

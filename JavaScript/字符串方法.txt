@@ -1,0 +1,39 @@
+length     属性			
+字符串长度
+
+charAt(index)  |  [index]  	
+访问字符串中的某个字符
+
+replace( old , new )		
+替换
+
+match(/字符/g)               
+查看字符，返回数组
+
+seatch()                   
+ 查看字符，返回结果
+
+indexOf()               
+查找字符串中是否包含一个子字符串，返回下表，找不到返回-1
+
+toUpperCase()      
+转大写
+
+toLowerCase()          
+转小写
+
+slice(start,end)        
+截取一部分
+
+substring()         
+截取一部分
+
+fromCharCode()  | charCodeAt()
+字符和ASCLL相互转化
+
+trim      
+去除两端空格
+
+
+正则表达式
+/ 字符 /g   全部字符串

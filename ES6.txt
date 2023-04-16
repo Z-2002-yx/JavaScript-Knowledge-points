@@ -1,0 +1,178 @@
+let:
+	1、定义局部变量
+	2、不允许出现同名变量
+	3、作用域不会提升
+	4、let定义变量不会绑定到全局window上
+	5、TDZ暂时性死区，变量作用域不会提升
+	6、在方法内定义的变量不允许和形参名相同
+
+const:
+	1、局部便令
+	2、TDZ暂时性死区
+	3、定义常量，不可修改，引用类型除外
+	4、不允许出现同名变量
+
+结构赋值：
+	1、结构字符串：[变量1，变量2·····] = 字符串             
+	2、结构数组：[变量1，变量2·····]  =  [值1，值2·····] 
+	3、结构对象：{键，键，键} = {键：值，键：值}   （注意键名要一致）
+
+模板字符：
+	模板字符定义方式  ` `
+	1、不需要关注长篇HTML空白符
+	2、在模板字符串中使用 ${}  输出变量或方法
+
+对象简写：
+	1、可以直接使用变量作为对象的键值对
+	2、定义方法时可以省略function
+
+数组：
+	1、静态函数
+		数组内置方法
+		Array.isArray( 变量 )     	判断是否为数组
+		Array.of(1,2,3,4,5,6,7)	将给定的一组值转换成数组，为了弥补new Array，有一个值时定义的是长度
+		Array.from()		将类数组转换成数组
+		
+		添加删除
+		push()			数组尾部新增元素
+		pop()
+		unshift()
+		shift()
+
+		截取
+		splice(index,length)		从index下标位置删除length长度个元素
+		slice(start,end)截取数组下标start到end的元素
+		
+		查找
+		indexOf()  		从前往后查找返回下标，查找不到返回-1
+		listIndexOf()	从后向前查找
+		includes()		查找元素返回true，查找不到返回false
+		（indexOf和includes的区别，indexOf采用的===，includes采用的==）
+
+		转换字符串
+		join()
+
+		排序
+		sort((a,b)=>{   升序
+			return a - b;
+		})
+		sort((a,b)=>{   降序
+			return b - a;
+		})
+
+		逆置
+		reverse()
+
+
+	2、高阶方法
+		find() 			返回满足条件的元素
+		findIndex()		返回满足条件的下标
+		every()			数组都满足条件返回true
+		some()			数组一个满足条件返回true
+		filter()		返回满足条件的元素组成的新数组
+		map()			返回计算后的元素组成的新数组
+
+	3、合并数组
+		concat(arr1,arr2,arr3)
+
+	4、ES6新增
+		fill(values,index)  填充、替换 (values替换的值，从index开始，如果没有indexn那么全部替换)
+		flat(1)				将二维数组拉平为一维数组，括号中2将三维数组拉平为一维数组
+		flatMap()			和Map一样可以做计算但是，这个可以返回多维数组
+		reduce(function(up,dn){},默认值)    			计算数组中总和
+
+
+函数扩展：
+	1、函数的形参可以设置默认值 例：function(a = 1,b = 2)
+	2、rest参数   		用来获取函数中剩余的参数
+		rest和arguments的区别：
+			1、rest获取剩余的参数，arguments获取所有参数
+			2、rest参数后不允许，再出现其他形参
+			3、arguments返回一个类数组，rest返回一个数组
+	
+	3、当方法没有返回值时，返回为undefined
+
+	4、方法含有name属性，返回方法的名称
+
+扩展运算符：
+	···   分隔数组中每项元素
+
+箭头函数：
+	1、在箭头函数中this关键字指向window对象
+	2、箭头函数不能声明构造函数，也不能使用new实例化
+	3、在箭头函数中不包含arguments属性
+
+
+基本数据类型：
+	字符串、数值、布尔、null、undefined、（ES6新增Symbol、Set）
+
+	Symbol：唯一，独一无二
+		解决问题：
+			解决对象中属性相同时不覆盖
+		定义：
+			var 变量 = Symbol(value)
+			注意事项：symbol属于基本数据类型，不允许使用new关键字来创建
+		特性：
+			1、两个相同值得symbol()不相同
+			2、symbol类型不能用隐式计算
+			3、symbol可以被转换成字符串
+			4、symbol不能被转换成数值
+			5、symbol不能作为缓存的键
+			6、symbol可以转换成布尔类型
+		
+		方法：
+			for()		将两相同的symbol值指向一个值
+			keyFor()	返回symbol类型的值是否被登记
+
+		应用场景：
+			1、作为对象的键
+
+			注意事项：不能使用对象.属性来设置
+			2、可以作为私有属性
+
+
+	set:集合（返回类型为类数组）
+		1、定义：
+			new Set(Array)
+			需要使用new关键字创建
+		2、特性：
+			实现数组、字符串去重
+			
+
+		3、方法：
+			add()		向集合中添加数据
+			delete()	在集合中按照元素值删除元素
+			has()		判断元素在集合中是否存在
+			clear()		清空集合中所有元素
+	
+	
+		
+		4、属性：
+			size		返回集合的长度
+
+		5、循环方法
+			keys() 		返回键名
+			for (o of set.keys()){}
+
+			values()	返回值
+			for (o of set.values()){}
+
+			entries()	返回键值对
+
+			forEach((value,key)=>{})
+	map:
+		解决键名只能是字符串
+		定义：new Map()
+
+		方法：
+			set(key,value) 	添加
+			get(key)		获取
+			has(key)		判断键是否存在
+			delete(key)	删除
+			clear() 		清空
+			
+		循环方法：
+			keys()		返回所有键
+			values()	返回所有值
+			entries()	返回键值对
+			forEach((value,key)=>{})

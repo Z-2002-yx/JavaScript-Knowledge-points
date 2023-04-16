@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!---
+        原型：prototype表示，也称为显示原型，prototype是构造函数的一个属性，通过构造函数实现的对象可以继承属性或方法
+            function Person(username){
+                this.username = username;
+            }
+            console.log(Person.prototype)
+        __proto__:隐式原型，实例化后的原型
+
+        constructor:属性返回构造函数
+
+        构造函数实例化后得到隐式原型（__proto__），实例调用隐式原型属性(__proto__)等于原型, 原型上的constructor等于构造函数
+            function Person(){
+
+            }
+            var p1 = new Person();
+            console.log(p1.__proto__.constructor == Person)
+            console.log(p1.__proto__ == Person.prototype)
+            console.log(Person.prototype.constructor  == Person)
+
+        特性：
+            1、可以理解为原型对象是从父类上继承的属性或方法
+            2、每个原型对象的父类都是Object对象
+            3、使用原型对象可以共享属性或方法
+                Object.prototype.add = function(){
+                    return 5;
+                }
+                var arr = [];
+                var str = '';
+
+                console.log(arr.add())
+                console.log(str.add())
+            4、在当前原型对象上找不到的属性或方法，会从父类原型找
+            5、使用原型对象可以解决创造对象时方法被重复定义，造成内存占用问题
+                function Person(username){
+                    this.username = username;
+                    // this.getName = function(){
+                    //     return this.username;
+                    // }
+                }
+                Person.prototype.getName = function(){
+                    return this.username;
+                }
+                var p1 = new Person('张三')
+                console.log(p1)
+                console.log(p1.getName())
+                var p2 = new Person('李四')
+                console.log(p2)
+                console.log(p2.getName())
+            6、原型对象上包含constructor属性指向构造函数
+            7、实例对象上包含__proto__指向原型对象
+        
+        原型链：
+            每个对象都会在其内部初始化一个属性，就是`__proto__`，当我们访问一个对象的属性时
+            如果这个对象内部不存在这个属性，那么他就会去`__proto__`里找这个属性，这个`__proto__`又会有自己的`__proto__`，于是就这样一直找下去，也就是我们平时所说的原型链的概念。按照标准，`__proto__` 是不对外公开的，也就是说是个私有属性
+            关系：`instance.constructor.prototype == instance.__proto__`
+
+        继承
+            1、使用Object.setPrototypeOf()改变this指向，实现继承
+                var obj = {
+                    username:'张三'
+                }
+                var obj2 = {
+                    city:'保定'
+                }
+                Object.setPrototypeOf(obj,obj2)
+                console.log(obj)
+                console.log(obj2)
+            2、使用原型对象来实现继承
+                function Person(username){
+                    this.username = username;
+                }
+                function User(){
+                    
+                }
+                User.prototype = new Person();
+                var u = new User();
+                console.log(u)
+                缺点：
+                    1、无法给父类传值
+                    2、两个实例对象共享同一父类
+
+                    function Person(username){
+                        this.username = username;
+                    }
+                    function User(username){
+                        this.username = username;
+                    }
+                    User.prototype = new Person();
+                    var u = new User();
+                    u.__proto__.username = '张三';
+                    console.log(u)
+                    var u1 = new User();
+                    console.log(u1)
+            3、借用构造函数
+                    function Person(username){
+                        this.username = username;
+                        this.getName = function(){
+                            return this.username
+                        }
+                    }
+                    function User(username){
+                        Person.call(this,username)
+                    }
+                    var u = new User('张三');
+                    console.log(u)
+                    var u1 = new User('李四');
+                    console.log(u1)
+                    缺点：实例对象时会重复创建父类下的属性和方法，造成内存占用
+            4、构造函数+原型复合使用
+                    function Person(username){
+                        this.username = username;
+                    }
+                    Person.prototype.getName = function(){
+                        return this.username;
+                    }
+                    function User(username){
+                        Person.call(this,username)
+                    }
+                    User.prototype = new Person()
+                    var u = new User('张三');
+                    console.log(u)
+                    var u1 = new User('李四');
+                    console.log(u1)
+                    缺点：
+                        父类的构造函数被重复使用了二次
+
+
+                
+    -->
+    <script>
+        function Person(username){
+            this.username = username;
+        }
+        Person.prototype.getName = function(){
+            return this.username;
+        }
+        function User(username){
+            Person.call(this,username)
+        }
+        User.prototype = new Person()
+        var u = new User('张三');
+        console.log(u)
+        var u1 = new User('李四');
+        console.log(u1)
+    </script>
+</body>
+</html>
